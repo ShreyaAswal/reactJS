@@ -28,18 +28,24 @@ function App() {
   const addOne = () => {
     // counter+=1
     setCounter(counter+1) //directly return counter+1
-    console.log(counter)
+    setCounter(counter+1)
+    setCounter(counter+1)
+    setCounter(counter+1)  //even after writing 'setCounter' 4 times it only increases the value once,because 'useState' send the changes in UI/variable in batches
+                          //thus, treating all these change as a single change (and updating the value of counter onl once)
   }
 
   const minusOne = ()=>{
   //   counter-=1
   
-    setCounter( ()=>{
-      if(counter==0)return counter;
-      else return counter-1
-    })
+    // setCounter( (prevCounter)=>{ // it brings the current value of counter with it. Value which is about to get updated
+    //   if(prevCounter==0)return prevCounter;
+    //   else return prevCounter-1
+    // })
 
-    console.log('minus:',counter)
+    setCounter(prevCounter => prevCounter-1)
+    setCounter(prevCounter => prevCounter-1)
+    setCounter(prevCounter => prevCounter-1)
+    setCounter(prevCounter => prevCounter-1)//it will update the value value of counter 4 times, as in this setCounter is accepting a callBack func and when a func complete only then the other func calls
   }
 
   return (

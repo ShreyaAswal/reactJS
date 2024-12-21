@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Card2({btntext="press" ,myobj}){
-    console.log(myobj.username)
+    
      return(
     <>
       <figure className="bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
