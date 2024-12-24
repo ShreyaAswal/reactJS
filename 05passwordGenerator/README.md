@@ -1,5 +1,6 @@
 ## useCallback (used for memoization of function)
--React Hook that lets you cache a function definition between re-renders.
+
+- React Hook that lets you cache a function definition between re-renders.
 
 
 ### definition => const cachedFn = useCallback(fn, dependencies)
